@@ -16,5 +16,12 @@ namespace Assignment4
         {
             InitializeComponent();
         }
+
+        private void splashformtimer_Tick(object sender, EventArgs e)
+        {
+            Program.bmiCalculator.Show();
+            this.Hide();
+            splashformtimer.Enabled = false;
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace Assignment4
     static class Program
     {
         public static SplashForm splashform;
-        public static BMICalculator bmicalculator;
+        public static BMICalculator bmiCalculator;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -18,7 +18,11 @@ namespace Assignment4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BMICalculator());
+            
+            splashform = new SplashForm();
+            bmiCalculator = new BMICalculator();
+
+            Application.Run(splashform);
         }
     }
 }

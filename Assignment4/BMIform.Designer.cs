@@ -35,12 +35,12 @@
             this.heightlabel = new System.Windows.Forms.Label();
             this.weightlabel = new System.Windows.Forms.Label();
             this.calculatebutton = new System.Windows.Forms.Button();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.weight = new System.Windows.Forms.NumericUpDown();
             this.height = new System.Windows.Forms.NumericUpDown();
             this.calculatedbmi = new System.Windows.Forms.TextBox();
             this.multilinetextbox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.height)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,12 +55,12 @@
             this.tableLayoutPanel1.Controls.Add(this.heightlabel, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.weightlabel, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.calculatebutton, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.numericUpDown2, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.weight, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.height, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.calculatedbmi, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.multilinetextbox, 0, 6);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 16);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.40816F));
@@ -96,7 +96,7 @@
             this.imperialradiobutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.imperialradiobutton.ForeColor = System.Drawing.Color.Navy;
             this.imperialradiobutton.Location = new System.Drawing.Point(7, 88);
-            this.imperialradiobutton.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.imperialradiobutton.Margin = new System.Windows.Forms.Padding(7);
             this.imperialradiobutton.Name = "imperialradiobutton";
             this.imperialradiobutton.Size = new System.Drawing.Size(121, 51);
             this.imperialradiobutton.TabIndex = 1;
@@ -112,7 +112,7 @@
             this.metricradiobutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metricradiobutton.ForeColor = System.Drawing.Color.Navy;
             this.metricradiobutton.Location = new System.Drawing.Point(142, 88);
-            this.metricradiobutton.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.metricradiobutton.Margin = new System.Windows.Forms.Padding(7);
             this.metricradiobutton.Name = "metricradiobutton";
             this.metricradiobutton.Size = new System.Drawing.Size(121, 51);
             this.metricradiobutton.TabIndex = 2;
@@ -156,23 +156,29 @@
             this.calculatebutton.Font = new System.Drawing.Font("Microsoft YaHei", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.calculatebutton.ForeColor = System.Drawing.Color.SkyBlue;
             this.calculatebutton.Location = new System.Drawing.Point(7, 225);
-            this.calculatebutton.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.calculatebutton.Margin = new System.Windows.Forms.Padding(7);
             this.calculatebutton.Name = "calculatebutton";
             this.calculatebutton.Size = new System.Drawing.Size(256, 39);
             this.calculatebutton.TabIndex = 5;
             this.calculatebutton.Text = "Calculate BMI";
             this.calculatebutton.UseVisualStyleBackColor = false;
+            this.calculatebutton.Click += new System.EventHandler(this.calculatebutton_Click);
             // 
-            // numericUpDown2
+            // weight
             // 
-            this.numericUpDown2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numericUpDown2.BackColor = System.Drawing.Color.Azure;
-            this.numericUpDown2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown2.Location = new System.Drawing.Point(142, 189);
-            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(121, 30);
-            this.numericUpDown2.TabIndex = 8;
+            this.weight.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.weight.BackColor = System.Drawing.Color.Azure;
+            this.weight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.weight.Location = new System.Drawing.Point(142, 189);
+            this.weight.Margin = new System.Windows.Forms.Padding(7);
+            this.weight.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.weight.Name = "weight";
+            this.weight.Size = new System.Drawing.Size(121, 30);
+            this.weight.TabIndex = 8;
             // 
             // height
             // 
@@ -180,7 +186,12 @@
             this.height.BackColor = System.Drawing.Color.Azure;
             this.height.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.height.Location = new System.Drawing.Point(142, 153);
-            this.height.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.height.Margin = new System.Windows.Forms.Padding(7);
+            this.height.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.height.Name = "height";
             this.height.Size = new System.Drawing.Size(121, 30);
             this.height.TabIndex = 7;
@@ -192,12 +203,13 @@
             this.tableLayoutPanel1.SetColumnSpan(this.calculatedbmi, 2);
             this.calculatedbmi.Enabled = false;
             this.calculatedbmi.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calculatedbmi.ForeColor = System.Drawing.Color.Navy;
+            this.calculatedbmi.ForeColor = System.Drawing.Color.DarkGreen;
             this.calculatedbmi.Location = new System.Drawing.Point(3, 285);
             this.calculatedbmi.Name = "calculatedbmi";
             this.calculatedbmi.ReadOnly = true;
             this.calculatedbmi.Size = new System.Drawing.Size(264, 32);
             this.calculatedbmi.TabIndex = 9;
+            this.calculatedbmi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // multilinetextbox
             // 
@@ -222,15 +234,16 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.Margin = new System.Windows.Forms.Padding(7);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BMICalculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BMI Calculator";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BMICalculator_FormClosing);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.height)).EndInit();
             this.ResumeLayout(false);
 
@@ -246,7 +259,7 @@
         private System.Windows.Forms.Label weightlabel;
         private System.Windows.Forms.Button calculatebutton;
         private System.Windows.Forms.NumericUpDown height;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown weight;
         private System.Windows.Forms.TextBox calculatedbmi;
         private System.Windows.Forms.TextBox multilinetextbox;
     }
