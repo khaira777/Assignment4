@@ -12,32 +12,36 @@ namespace Assignment4
 {
     public partial class BMICalculator : Form
     {
+        // PUBLIC FIELD
         public decimal Bmi;
         public BMICalculator()
         {
             InitializeComponent();
         }
 
+        // CODE FOR DISPLAYING OUTPUT TO THE MULTILINE TEXTBOX
         public void multilineoutput(decimal calculatedbmi)
         {
             decimal result = calculatedbmi;
-            if (Bmi < (decimal)18.50)
+            if (result < (decimal)18.50)
             {
                 multilinetextbox.Text = "Result: According to BMI, you are underweight. ";
             }
-            else if (Bmi >= (decimal)18.50 && Bmi <= (decimal)24.9)
+            else if (result >= (decimal)18.50 && result <= (decimal)24.9)
             {
                 multilinetextbox.Text = "Result: According to BMI, you are normal. ";
             }
-            else if (Bmi >= 25 && Bmi <= (decimal)29.9)
+            else if (result >= 25 && result <= (decimal)29.9)
             {
                 multilinetextbox.Text = "Result: According to BMI, you are overweight. ";
             }
-            else if (Bmi >= 30)
+            else if (result >= 30)
             {
                 multilinetextbox.Text = "Result: According to BMI, you are obese. ";
             }
         }
+
+        // ACTION THAT WILL HAPPEN WHEN THE CALCULATE BMI  BUTTON WILL BE PRESSED
         private void calculatebutton_Click(object sender, EventArgs e)
         {
             decimal wt = weight.Value;
@@ -57,6 +61,7 @@ namespace Assignment4
             }
         }
 
+        //THIS METHOD WILL CLOSE BOTH, THE BMI AND (HIDDEN)SPLASH FORM
         private void BMICalculator_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

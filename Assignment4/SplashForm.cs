@@ -17,6 +17,8 @@ namespace Assignment4
             InitializeComponent();
         }
 
+        // TIMER EVENT TO HIDE THIS FORM AND SHOW THE BMI FORM
+        // THIS WILL ALSO DISABLE THE SPLASH FORM TIMER
         private void splashformtimer_Tick(object sender, EventArgs e)
         {
             Program.bmiCalculator.Show();
